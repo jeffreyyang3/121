@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.google.android.gms.nearby.connection.ConnectionsClient;
+
 public class MainActivity extends AppCompatActivity {
     public static final int MY_PERMISSIONS_ACCESS_COARSE_LOCATION = 0;
     @Override
@@ -24,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                     MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
-
-
         }
+
     }
 }
