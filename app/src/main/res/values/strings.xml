@@ -4,6 +4,10 @@
     <string name="init_hub">Create Game</string>
     <string name="init_spoke">Find Game</string>
     <string name="service_id">dd_service_id</string>
+    <string name="Add_Character">Add Character</string>
+    <string name="New_Group">Make New Group</string>
+    <string name="Select_Character">Select Character</string>
+    <string name="Select_Group">Select Group</string>
     <string name="status">Welcome</string>
     <string name="status_connected">Connected.</string>
     <string name="status_searching">Searching...</string>
