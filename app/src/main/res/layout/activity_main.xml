@@ -15,6 +15,7 @@
         android:layout_marginEnd="149dp"
         android:layout_marginStart="147dp"
         android:layout_marginTop="152dp"
+        android:onClick="hostLobby"
         android:text="@string/init_hub"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginBottom="152dp"
         android:layout_marginEnd="149dp"
         android:layout_marginStart="147dp"
+        android:onClick="findDM"
         android:text="@string/init_spoke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +51,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.703" />
 
+
     <Button
         android:id="@+id/button_Group_Select"
         android:layout_width="wrap_content"
@@ -64,5 +67,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="103dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
