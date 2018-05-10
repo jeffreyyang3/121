@@ -11,6 +11,6 @@
     <string name="status">Welcome</string>
     <string name="status_connected">Connected.</string>
     <string name="status_searching">Searching...</string>
-    <string name="status_waiting">Finding Players</string>
+    <string name="status_waiting">Finding Players...</string>
     <string name="cancel_button">Cancel</string>
 </resources>
