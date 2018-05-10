@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">121game</string>
     <string name="output_for_testing">0</string>
-    <string name="init_hub">Hub</string>
-    <string name="init_spoke">Spoke</string>
+    <string name="init_hub">Create Game</string>
+    <string name="init_spoke">Find Game</string>
     <string name="service_id">dd_service_id</string>
+    <string name="status">Welcome</string>
+    <string name="status_connected">Connected.</string>
+    <string name="status_searching">Searching...</string>
+    <string name="status_waiting">Finding Players</string>
 </resources>
