@@ -4,4 +4,8 @@
     <string name="init_hub">Hub</string>
     <string name="init_spoke">Spoke</string>
     <string name="service_id">dd_service_id</string>
+    <string name="Add_Character">Add Character</string>
+    <string name="New_Group">Make New Group</string>
+    <string name="Select_Character">Select Character</string>
+    <string name="Select_Group">Select Group</string>
 </resources>

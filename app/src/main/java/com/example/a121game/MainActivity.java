@@ -55,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button ButtonGroupSelect = findViewById(R.id.button_Group_Select);
+        ButtonGroupSelect.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                Intent i = new Intent(MainActivity.this, GroupSelectActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
 
