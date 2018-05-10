@@ -17,6 +17,7 @@ public class CharacterSelectActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         MenuInflater inf = getMenuInflater();
         inf.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);

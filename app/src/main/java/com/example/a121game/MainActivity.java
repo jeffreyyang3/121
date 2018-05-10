@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Button ButtonCharacterSelect = findViewById(R.id.button_Character_Select);
         ButtonCharacterSelect.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
+
                 Intent i = new Intent(MainActivity.this, CharacterSelectActivity.class);
                 startActivity(i);
             }
