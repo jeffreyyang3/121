@@ -1,6 +1,7 @@
 package com.example.a121game;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.IntentFilter;
 
 import android.content.pm.PackageManager;
@@ -135,15 +136,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/*
-    protected void onResume(){
+
+    protected void onResume() {
         super.onResume();
         //
         //CODE THAT NEEDS TO BE CONTINUED ONCE AN ACTIVITY IS POPPED OFF THE STACK
         //
         Button ButtonCharacterSelect = findViewById(R.id.button_Character_Select);
-        ButtonCharacterSelect.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
+        ButtonCharacterSelect.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
 
                 Intent i = new Intent(MainActivity.this, CharacterSelectActivity.class);
                 startActivity(i);
@@ -151,12 +152,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button ButtonGroupSelect = findViewById(R.id.button_Group_Select);
-        ButtonGroupSelect.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
+        ButtonGroupSelect.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, GroupSelectActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
+    }
 
     //discovering DM
     public void findDM(View view){
