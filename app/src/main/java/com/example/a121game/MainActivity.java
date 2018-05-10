@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button findDMButton;
     private Button playerButton;
+    private Button cancelButton;
     private TextView statusText;
 
     private final EndpointDiscoveryCallback endpointDiscoveryCallback =
@@ -130,8 +131,10 @@ public class MainActivity extends AppCompatActivity {
 
         findDMButton = findViewById(R.id.button2);  //create game
         playerButton = findViewById(R.id.button);  //find game
+        cancelButton = findViewById(R.id.button3); //cancel
         statusText = findViewById(R.id.textView);
 
+        cancelButton.setVisibility(View.GONE);
         connectionsClient = Nearby.getConnectionsClient(this);
 
     }
@@ -165,6 +168,8 @@ public class MainActivity extends AppCompatActivity {
         startDiscovery();
         setStatusText(getString(R.string.status_searching));
         findDMButton.setEnabled(false);
+        playerButton.setEnabled(false);
+        cancelButton.setVisibility(View.VISIBLE);
 
     }
 
@@ -172,6 +177,8 @@ public class MainActivity extends AppCompatActivity {
         startAdvertising();
         setStatusText(getString(R.string.status_waiting));
         playerButton.setEnabled(false);
+        findDMButton.setEnabled(false);
+        cancelButton.setVisibility(View.VISIBLE);
     }
     //will not handle failed discovery as of yet
     private void startDiscovery() {
@@ -184,10 +191,16 @@ public class MainActivity extends AppCompatActivity {
         connectionsClient.startAdvertising(
                 codeName, getPackageName(), connectionLifecycleCallback, new AdvertisingOptions(STRATEGY));
     }
+    public void cancel(View view){
+        connectionsClient.stopAdvertising();
+        connectionsClient.stopDiscovery();
+        playerButton.setEnabled(true);
+        findDMButton.setEnabled(true);
+        setStatusText(getString(R.string.status));
+        cancelButton.setVisibility(View.GONE);
+    }
     private void setStatusText(String text) {
         statusText.setText(text);
     }
-    private void resetLobby(){
 
-    }
 }
