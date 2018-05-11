@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "DungeonsAndDragons";
     private static final Strategy STRATEGY = Strategy.P2P_STAR;
     private ConnectionsClient connectionsClient;
-    //placeholder for player id
+   // //placeholder for player id
     private final String codeName = "simpleName";
 
     //should be changed to DM endpointId and DM name
@@ -202,5 +202,4 @@ public class MainActivity extends AppCompatActivity {
     private void setStatusText(String text) {
         statusText.setText(text);
     }
-
 }
