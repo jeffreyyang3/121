@@ -1,4 +1,5 @@
 <resources>
+    <string name="main_activity">MainActivity</string>
     <string name="app_name">121game</string>
     <string name="output_for_testing">0</string>
     <string name="init_hub">Create Game</string>

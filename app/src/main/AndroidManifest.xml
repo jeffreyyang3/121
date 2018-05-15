@@ -16,6 +16,7 @@
         android:theme="@style/AppTheme">
         <meta-data android:name="com.google.android.gms.nearby.connection.SERVICE_ID" android:value="@string/service_id" />
         <activity android:name=".CharacterSelectActivity"/>
+        <activity android:name=".GroupSelectActivity"/>
         <activity android:name=".MainActivity">
 
             <intent-filter>
