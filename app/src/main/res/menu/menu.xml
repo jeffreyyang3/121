@@ -3,7 +3,7 @@
     <!-- the title attribute "action_favorite" needs to be added in the strings.xml file -->
     <item
 
-        android:id="@+id/action_favorite"
+        android:id="@+id/main_activity"
         android:title="@string/Add_Character"
 
         xmlns:app="http://schemas.android.com/apk/res-auto"
