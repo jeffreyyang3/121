@@ -6,6 +6,7 @@
     <string name="init_spoke">Find Game</string>
     <string name="service_id">dd_service_id</string>
     <string name="Add_Character">Add Character</string>
+    <string name="action_favorite">Add Character</string>
     <string name="New_Group">Make New Group</string>
     <string name="Select_Character">Select Character</string>
     <string name="Select_Group">Select Group</string>
@@ -14,4 +15,16 @@
     <string name="status_searching">Searching...</string>
     <string name="status_waiting">Finding Players...</string>
     <string name="cancel_button">Cancel</string>
+    <string name="title_activity_player_create">PlayerCreate</string>
+    <string name="player_name">Player Name:</string>
+    <string name="character_name">Character Name:</string>
+    <string name="health">Health:</string>
+    <string name="stats">Add Character</string>
+    <string name="intellect">Intellect:</string>
+    <string name="wisdom">Wisdom:</string>
+    <string name="charisma">Charisma:</string>
+    <string name="strength">Strength:</string>
+    <string name="dexterity">Dexterity:</string>
+    <string name="constitution">Constitution:</string>
+    <string name="create_char_button">Create</string>
 </resources>
