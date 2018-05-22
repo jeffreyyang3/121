@@ -28,7 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".GroupSelectActivity" />
-        <activity android:name=".PlayerCreateActivity"></activity>
+        <activity android:name=".PlayerCreateActivity" />
+        <activity android:name=".ChosenCharacter"></activity>
     </application>
 
 </manifest>

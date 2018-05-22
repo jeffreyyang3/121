@@ -27,4 +27,5 @@
     <string name="dexterity">Dexterity:</string>
     <string name="constitution">Constitution:</string>
     <string name="create_char_button">Create</string>
+    <string name="updateDM">Update DM</string>
 </resources>

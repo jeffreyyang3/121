@@ -8,10 +8,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class player implements Parcelable{
-    private String PlayerName;
-    private String CharacterName;
-    private int[] PlayerStats;
-    private int Health;
+    public String PlayerName;
+    public String CharacterName;
+    public int[] PlayerStats;
+    public int Health;
 
     private JSONObject jS;
 
@@ -22,13 +22,29 @@ public class player implements Parcelable{
         this.Health += change;
     }
 
+    public player(String PlayerName, String CharacterName, int Health)
+    {
+        this.PlayerName = PlayerName;
+        this.CharacterName = CharacterName;
+        this.Health = Health;
+        PlayerStats = new int[6];
+    }
+
     public player(String PlayName, int stats[], String CharName, int HP){
         this.PlayerName = PlayName;
         this.PlayerStats = stats;
         this.CharacterName = CharName;
         this.Health = HP;
     }
-
+    public void stats(int intellect, int wisdom, int charisma, int strength, int dexterity, int constitution)
+    {
+        PlayerStats[0] = intellect;
+        PlayerStats[1] = wisdom;
+        PlayerStats[2] = charisma;
+        PlayerStats[3] = strength;
+        PlayerStats[4] = dexterity;
+        PlayerStats[5] = constitution;
+    }
     public JSONObject getJson(){
         try {
             jS.put("player", this.PlayerName);
