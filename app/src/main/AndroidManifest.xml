@@ -27,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DmLobbyActivity"></activity>
         <activity android:name=".GroupSelectActivity" />
         <activity android:name=".PlayerCreateActivity" />
         <activity android:name=".ChosenCharacter"></activity>

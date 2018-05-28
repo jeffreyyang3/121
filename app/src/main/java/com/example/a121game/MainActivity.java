@@ -161,6 +161,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button ButtonDMLobby = findViewById(R.id.button_dm_start_test);
+        ButtonDMLobby.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DmLobbyActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     //discovering DM
