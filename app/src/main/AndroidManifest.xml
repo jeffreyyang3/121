@@ -29,7 +29,8 @@
         </activity>
         <activity android:name=".GroupSelectActivity" />
         <activity android:name=".PlayerCreateActivity" />
-        <activity android:name=".ChosenCharacter"></activity>
+        <activity android:name=".ChosenCharacter" />
+        <activity android:name=".Host"></activity>
     </application>
 
 </manifest>

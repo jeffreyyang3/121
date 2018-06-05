@@ -231,12 +231,16 @@ public class ChosenCharacter extends AppCompatActivity {
     {
         connectionsClient.startDiscovery(
                 getPackageName(), endpointDiscoveryCallback, new DiscoveryOptions(STRATEGY));
+        Toast.makeText(ChosenCharacter.this, "Searching... D",
+                Toast.LENGTH_LONG).show();
     }
     //will not handle an advertising failure
     private void startAdvertising()
     {
         connectionsClient.startAdvertising(
                 codeName, getPackageName(), connectionLifecycleCallback, new AdvertisingOptions(STRATEGY));
+        Toast.makeText(ChosenCharacter.this, "Searching... A",
+                Toast.LENGTH_LONG).show();
     }
     public void cancel(View view){
         role = "";

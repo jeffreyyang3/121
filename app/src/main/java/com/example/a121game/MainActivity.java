@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private Button findDMButton;
     private Button playerButton;
     private Button cancelButton;
+    private Button hostButton;
     private TextView statusText;
 
     @Override
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         playerButton = findViewById(R.id.button);  //find game
         cancelButton = findViewById(R.id.button3); //cancel
         statusText = findViewById(R.id.textView);
+        hostButton = findViewById(R.id.button7);
 
         cancelButton.setVisibility(View.GONE);
         connectionsClient = Nearby.getConnectionsClient(this);
@@ -198,5 +200,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setStatusText(String text) {
         statusText.setText(text);
+    }
+    public void host(View view)
+    {
+        startActivity(new Intent(MainActivity.this, Host.class));
     }
 }
