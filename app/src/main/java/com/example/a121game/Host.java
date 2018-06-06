@@ -137,13 +137,13 @@ public class Host extends AppCompatActivity {
                     String receivedPlayer;
                     try{
                         receivedPlayer= new String(payload.asBytes(), "utf-8");
-                        JSONObject newPlayer = new JSONObject(receivedPlayer);
+                        //JSONObject newPlayer = new JSONObject(receivedPlayer);
                         try{
                             File f = new File(getFilesDir(), "host_file.ser");
                             f.createNewFile();
                             FileOutputStream fo = new FileOutputStream(f);
                             ObjectOutputStream o = new ObjectOutputStream(fo);
-                            o.writeObject(newPlayer);
+                            o.writeObject(receivedPlayer);
                             fo.close();
                             o.close();
                         }
