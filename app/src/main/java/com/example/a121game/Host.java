@@ -21,6 +21,8 @@ import com.google.android.gms.nearby.connection.Payload;
 import com.google.android.gms.nearby.connection.PayloadCallback;
 import com.google.android.gms.nearby.connection.PayloadTransferUpdate;
 import com.google.android.gms.nearby.connection.Strategy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,6 +33,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
 
 public class Host extends AppCompatActivity {
     private ListView mListView;
@@ -71,6 +74,9 @@ public class Host extends AppCompatActivity {
             ObjectInputStream o = new ObjectInputStream(fi);
 
             String j = (String)o.readObject();
+            Gson g = new Gson();
+            JSONObject jO = g.fromJson(j, JSONObject.class);
+           // String name = jO.getString("\"PlayerName\"");
             playerTest[0] = j;
 
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerTest);
