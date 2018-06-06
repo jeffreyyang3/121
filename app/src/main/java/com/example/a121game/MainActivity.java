@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().hide();
+
         //if the user has not yet allowed the device to access location data, will prompt for permission
         //am currently unsure how we should handle declined permissions (probably exit app), as the connectivity api that will most likely be used
         //will require location data.

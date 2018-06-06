@@ -31,4 +31,6 @@
     <string name="pullFromDM">Receive</string>
     <string name="hostButton">Host</string>
     <string name="connectButton">Connect</string>
+    <string name="splash_text">The Companion App</string>
+    <string name="dd_logo_description">Splash Image</string>
 </resources>

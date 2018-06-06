@@ -63,6 +63,8 @@ public class ChosenCharacter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chosen_character);
 
+        getSupportActionBar().hide();
+
         send = findViewById(R.id.button5);
         receive = findViewById(R.id.button6);
         cancel = findViewById(R.id.button10);

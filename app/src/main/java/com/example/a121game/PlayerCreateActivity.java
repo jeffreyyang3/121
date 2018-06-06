@@ -25,6 +25,9 @@ public class PlayerCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_create2);
+
+        getSupportActionBar().hide();
+
     }
     public void playerCreate(View view)
     {

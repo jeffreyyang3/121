@@ -55,6 +55,9 @@ public class Host extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host);
+
+        getSupportActionBar().hide();
+
         connectionsClient = Nearby.getConnectionsClient(this);
 
         mListView = (ListView) findViewById(R.id.player_view);

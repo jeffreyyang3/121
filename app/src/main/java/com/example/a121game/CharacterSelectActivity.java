@@ -30,6 +30,8 @@ public class CharacterSelectActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_select);
 
+        getSupportActionBar().hide();
+
         mListView = (ListView) findViewById(R.id.data_list_view);
         final ArrayList<player> list = new ArrayList<player>();
 

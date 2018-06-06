@@ -10,7 +10,7 @@ public class GroupSelectActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group_select);
 
-
+        getSupportActionBar().hide();
 
     }
 

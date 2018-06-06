@@ -20,7 +20,7 @@
             android:value="@string/service_id" />
 
         <activity android:name=".CharacterSelectActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash_Screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,8 @@
         <activity android:name=".GroupSelectActivity" />
         <activity android:name=".PlayerCreateActivity" />
         <activity android:name=".ChosenCharacter" />
-        <activity android:name=".Host"></activity>
+        <activity android:name=".Host" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
