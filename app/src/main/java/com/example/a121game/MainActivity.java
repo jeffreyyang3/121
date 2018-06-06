@@ -52,8 +52,33 @@ public class MainActivity extends AppCompatActivity {
     private Button findDMButton;
     private Button playerButton;
     private Button cancelButton;
+    private Button hostButton;
     private TextView statusText;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //if the user has not yet allowed the device to access location data, will prompt for permission
+        //am currently unsure how we should handle declined permissions (probably exit app), as the connectivity api that will most likely be used
+        //will require location data.
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                    MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
+        }
+
+        findDMButton = findViewById(R.id.button2);  //create game
+        playerButton = findViewById(R.id.button);  //find game
+        cancelButton = findViewById(R.id.button3); //cancel
+        statusText = findViewById(R.id.textView);
+        hostButton = findViewById(R.id.button7);
+
+        cancelButton.setVisibility(View.GONE);
+        connectionsClient = Nearby.getConnectionsClient(this);
+
+    }
     private final EndpointDiscoveryCallback endpointDiscoveryCallback =
             new EndpointDiscoveryCallback() {
                 @Override
@@ -112,32 +137,6 @@ public class MainActivity extends AppCompatActivity {
                    //what we will be doing once we have added the info from the received payload to our members ArrayList
                 }
             };
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        //if the user has not yet allowed the device to access location data, will prompt for permission
-        //am currently unsure how we should handle declined permissions (probably exit app), as the connectivity api that will most likely be used
-        //will require location data.
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
-        }
-
-        findDMButton = findViewById(R.id.button2);  //create game
-        playerButton = findViewById(R.id.button);  //find game
-        cancelButton = findViewById(R.id.button3); //cancel
-        statusText = findViewById(R.id.textView);
-
-        cancelButton.setVisibility(View.GONE);
-        connectionsClient = Nearby.getConnectionsClient(this);
-
-    }
 
 
     protected void onResume() {
@@ -209,5 +208,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setStatusText(String text) {
         statusText.setText(text);
+    }
+    public void host(View view)
+    {
+        startActivity(new Intent(MainActivity.this, Host.class));
     }
 }
