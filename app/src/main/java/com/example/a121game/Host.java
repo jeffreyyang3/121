@@ -74,10 +74,8 @@ public class Host extends AppCompatActivity {
             ObjectInputStream o = new ObjectInputStream(fi);
 
             String j = (String)o.readObject();
-            Gson g = new Gson();
-            JSONObject jO = g.fromJson(j, JSONObject.class);
-           // String name = jO.getString("\"PlayerName\"");
-            playerTest[0] = j;
+            JSONObject jO = new JSONObject(j);
+            playerTest[0] = jO.getString("PlayerName");
 
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerTest);
             mListView.setAdapter(adapter);
