@@ -21,6 +21,8 @@ import com.google.android.gms.nearby.connection.Payload;
 import com.google.android.gms.nearby.connection.PayloadCallback;
 import com.google.android.gms.nearby.connection.PayloadTransferUpdate;
 import com.google.android.gms.nearby.connection.Strategy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -31,6 +33,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
 
 public class Host extends AppCompatActivity {
     private ListView mListView;
@@ -71,7 +74,8 @@ public class Host extends AppCompatActivity {
             ObjectInputStream o = new ObjectInputStream(fi);
 
             String j = (String)o.readObject();
-            playerTest[0] = j;
+            JSONObject jO = new JSONObject(j);
+            playerTest[0] = jO.getString("PlayerName");
 
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerTest);
             mListView.setAdapter(adapter);
@@ -137,13 +141,13 @@ public class Host extends AppCompatActivity {
                     String receivedPlayer;
                     try{
                         receivedPlayer= new String(payload.asBytes(), "utf-8");
-                        JSONObject newPlayer = new JSONObject(receivedPlayer);
+                        //JSONObject newPlayer = new JSONObject(receivedPlayer);
                         try{
                             File f = new File(getFilesDir(), "host_file.ser");
                             f.createNewFile();
                             FileOutputStream fo = new FileOutputStream(f);
                             ObjectOutputStream o = new ObjectOutputStream(fo);
-                            o.writeObject(newPlayer);
+                            o.writeObject(receivedPlayer);
                             fo.close();
                             o.close();
                         }

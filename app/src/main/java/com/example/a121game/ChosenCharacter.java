@@ -46,6 +46,7 @@ public class ChosenCharacter extends AppCompatActivity {
 
     private Button send;
     private Button receive;
+    private Button cancel;
 
     public player myChar;
 
@@ -64,6 +65,8 @@ public class ChosenCharacter extends AppCompatActivity {
 
         send = findViewById(R.id.button5);
         receive = findViewById(R.id.button6);
+        cancel = findViewById(R.id.button10);
+        cancel.setVisibility(View.GONE);
         i= getIntent();
 
 
@@ -217,6 +220,7 @@ public class ChosenCharacter extends AppCompatActivity {
         startDiscovery();
         send.setEnabled(false);
         receive.setEnabled(false);
+        cancel.setVisibility(View.VISIBLE);
 
     }
     public void receive(View view)
@@ -225,6 +229,7 @@ public class ChosenCharacter extends AppCompatActivity {
         startAdvertising();
         send.setEnabled(false);
         receive.setEnabled(false);
+        cancel.setVisibility(View.VISIBLE);
     }
     //will not handle failed discovery as of yet
     private void startDiscovery()
@@ -248,5 +253,6 @@ public class ChosenCharacter extends AppCompatActivity {
         connectionsClient.stopDiscovery();
         send.setEnabled(true);
         receive.setEnabled(true);
+        cancel.setVisibility(View.GONE);
     }
 }
