@@ -2,19 +2,15 @@
     <string name="main_activity">MainActivity</string>
     <string name="app_name">121game</string>
     <string name="output_for_testing">0</string>
-    <string name="init_hub">Create Game</string>
-    <string name="init_spoke">Find Game</string>
     <string name="service_id">dd_service_id</string>
     <string name="Add_Character">Add Character</string>
     <string name="action_favorite">Add Character</string>
     <string name="New_Group">Make New Group</string>
     <string name="Select_Character">Select Character</string>
-    <string name="Select_Group">Select Group</string>
     <string name="status">Welcome</string>
     <string name="status_connected">Connected.</string>
     <string name="status_searching">Searching...</string>
     <string name="status_waiting">Finding Players...</string>
-    <string name="cancel_button">Cancel</string>
     <string name="title_activity_player_create">PlayerCreate</string>
     <string name="player_name">Player Name:</string>
     <string name="character_name">Character Name:</string>
@@ -33,4 +29,5 @@
     <string name="connectButton">Connect</string>
     <string name="splash_text">The Companion App</string>
     <string name="dd_logo_description">Splash Image</string>
+    <string name="cancel_button">Cancel</string>
 </resources>

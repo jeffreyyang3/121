@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
     //arraylist for holding each player Object
     private ArrayList<player> members = new ArrayList<player>();
 
-    private Button findDMButton;
-    private Button playerButton;
-    private Button cancelButton;
     private Button hostButton;
     private TextView statusText;
 
@@ -71,13 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
         }
 
-        findDMButton = findViewById(R.id.button2);  //create game
-        playerButton = findViewById(R.id.button);  //find game
-        cancelButton = findViewById(R.id.button3); //cancel
         statusText = findViewById(R.id.textView);
         hostButton = findViewById(R.id.button7);
 
-        cancelButton.setVisibility(View.GONE);
         connectionsClient = Nearby.getConnectionsClient(this);
 
     }
@@ -154,32 +147,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        Button ButtonGroupSelect = findViewById(R.id.button_Group_Select);
-        ButtonGroupSelect.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, GroupSelectActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     //discovering DM
     public void findDM(View view){
         startDiscovery();
         setStatusText(getString(R.string.status_searching));
-        findDMButton.setEnabled(false);
-        playerButton.setEnabled(false);
-        cancelButton.setVisibility(View.VISIBLE);
 
     }
 
     public void hostLobby(View view){
         startAdvertising();
         setStatusText(getString(R.string.status_waiting));
-        playerButton.setEnabled(false);
-        findDMButton.setEnabled(false);
-        cancelButton.setVisibility(View.VISIBLE);
     }
     //will not handle failed discovery as of yet
     private void startDiscovery() {
@@ -195,10 +174,7 @@ public class MainActivity extends AppCompatActivity {
     public void cancel(View view){
         connectionsClient.stopAdvertising();
         connectionsClient.stopDiscovery();
-        playerButton.setEnabled(true);
-        findDMButton.setEnabled(true);
         setStatusText(getString(R.string.status));
-        cancelButton.setVisibility(View.GONE);
     }
     private void setStatusText(String text) {
         statusText.setText(text);
