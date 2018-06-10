@@ -1,9 +1,12 @@
 package com.example.a121game;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -33,7 +36,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Host extends AppCompatActivity {
-    private ListView mListView;
+    private ListView list;
     private Button connect;
     private Button cancel;
 
@@ -46,6 +49,8 @@ public class Host extends AppCompatActivity {
     private String opponentEndpointId;
     private String opponentName;
     private String[] playerTest;
+    public ArrayList<String> players;
+    public JSONArray jArray;
 
 
 
@@ -55,17 +60,20 @@ public class Host extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_host);
+        global_vars gv = (global_vars) getApplicationContext();
+        players = gv.getArrayList();
+        jArray = gv.getJSONArray();
 
         getSupportActionBar().hide();
 
         connectionsClient = Nearby.getConnectionsClient(this);
 
-        mListView = (ListView) findViewById(R.id.player_view);
+        list = (ListView) findViewById(R.id.player_view);
         connect = (Button) findViewById(R.id.button8);
 
         cancel = (Button) findViewById(R.id.button9);
         cancel.setVisibility(View.GONE);
-        playerTest = new String[1];
+
         try{
 
             File f = new File(getFilesDir(), "host_file.ser");
@@ -74,10 +82,38 @@ public class Host extends AppCompatActivity {
             ObjectInputStream o = new ObjectInputStream(fi);
 
             String j = (String)o.readObject();
-            playerTest[0] = j;
+            JSONObject json = new JSONObject(j);
+            jArray.put(json);
+            players.add(json.getString("CharacterName"));
+            playerTest = new String[players.size()];
+            for(int i = 0; i < players.size(); i++){
+                playerTest[i] = players.get(i);
+            }
+            final Context context = this;
+            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                    // Create an Intent to reference our new activity, then call startActivity
+                    // to transition into the new Activity.
+                    Intent detailIntent = new Intent(context, HostList.class);
+
+
+                    detailIntent.putExtra("position", position);
+                    //System.out.println("@@@@ list index" + position);
+
+                    startActivity(detailIntent);
+                }
+
+            });
+
+
 
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, playerTest);
-            mListView.setAdapter(adapter);
+            list.setAdapter(adapter);
         }
         catch(Exception e)
         {
